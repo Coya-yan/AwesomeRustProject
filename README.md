@@ -1,0 +1,2 @@
+# AwesomeRustProject
+rust info
