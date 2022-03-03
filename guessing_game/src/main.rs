@@ -15,7 +15,10 @@ fn main() {
             .read_line(&mut guess)
             .expect("读取失败");
         println!("你输入的数字是: {}", guess);
-        let guess: u32 = guess.trim().parse().expect("请输入一个数字");
+        let guess: u32 = match guess.trim().parse() {
+                Ok(num) => num,
+                Err(_) => continue,
+            };
         println!("你输入的数字是: {}", guess);
         match guess.cmp(&secrect_number) {
             Ordering::Less => println!("你猜的数字太小了"),
