@@ -45,6 +45,11 @@ fn main() {
     let first = a[0];
     let second = a[1];
 
+    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    a: [1, 2, 3, 4, 5];
+
+    x = x + 1;
+
     let a = [1, 2, 3, 4, 5];
     println!("请输入阵列的索引");
     let mut index = String::new();
@@ -59,4 +64,10 @@ fn main() {
 
     let element = a[index];
     println!("索引为 {} 的元素为 {}", index, element);
+
+    io::stdin()
+        .read_line(&mut index)
+        .expect("读取索引失败");
+        
+    index = index.trim().parse().expect("索引必须是数字");
 }
